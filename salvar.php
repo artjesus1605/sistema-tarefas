@@ -4,14 +4,15 @@
             $nome = $_POST["Nome"];
             $descricao = $_POST["descricao"];
             $data = $_POST["data"];
+            $status = $_POST["status"];
 
-            $sql = "INSERT INTO Tarefa(Nome, Descricao, Dados_de_vencimento) values('{$nome}', '{$descricao}', '{$data}')";
+            $sql = "INSERT INTO Tarefa(Nome, Descricao, Dados_de_vencimento, status) values('{$nome}', '{$descricao}', '{$data}', '{$status}')";
 
             $res = $conn->query($sql);
 
             if($res==true){
                 print "<script>alert('Cadastro com concluido com sucesso!')</script>";
-                print "<script>location.href=?page=listar.php</script>";
+                print "<script>location.href=?page=listar</script>";
             }else{
                 print "<script>alert('Não foi possivel cadastrar')</script>";
                 print "<script>location.href=?page=listar.php</script>";
@@ -21,11 +22,15 @@
             $nome = $_POST["Nome"];
             $descricao = $_POST["descricao"];
             $data = $_POST["data"];
+            $status = $_POST["status"];
+
 
             $sql = "UPDATE Tarefa SET
                 nome='{$nome}',
                 descricao='{$descricao}',
-                Dados_de_vencimento='{$data}'
+                Dados_de_vencimento='{$data}',
+                status='{$status}'
+                
             WHERE
                 Id=".$_REQUEST["ID"];
 
@@ -51,4 +56,3 @@
             }
         break;
     }
-?>
