@@ -7,14 +7,14 @@ $row = $res->fetch_object();
 
 <form action="?page=salvar" method="post">
     <input type="hidden" name="acao" value="editar">
-    <input type="hidden" name="ID" value="<?php print $row->ID; ?>">
+    <input type="hidden" name="ID" value="<?php print $row->id; ?>">
     <div class="mb-3">
         <label>Nome da tarefa</label>
-        <input type="text" name="Nome" class="form-control" value="<?php print $row->Nome; ?>">
+        <input type="text" name="Nome" class="form-control" value="<?php print $row->nome; ?>">
     </div>
     <div class="mb-3">
         <label>Descrição</label>
-        <input type="text" name="descricao" class="form-control" value="<?php print $row->Descricao; ?>">
+        <input type="text" name="descricao" class="form-control" value="<?php print $row->descricao; ?>">
     </div>
     <div class="mb-3">
         <label>Data de vencimento</label>
